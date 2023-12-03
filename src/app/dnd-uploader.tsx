@@ -1,6 +1,5 @@
 "use client";
 
-// import { UploadDropzone } from '@uploadthing/react';
 import { UploadDropzone } from '@/utils/uploadthing';
 
  
@@ -8,7 +7,7 @@ import { UploadDropzone } from '@/utils/uploadthing';
  
 export default function UploadDnd() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex flex-col justify-between p-2">
       <UploadDropzone
         endpoint="imageUploader"
         onClientUploadComplete={(res: any) => {
