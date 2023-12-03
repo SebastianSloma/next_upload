@@ -1,6 +1,7 @@
 import Image from 'next/image';
-import Link from 'next/link';
 
+import Button from './example-uploader/page';
+import UploadDnd from './dnd-uploader';
 
 export default function Home() {
 	return (
@@ -15,11 +16,10 @@ export default function Home() {
 					priority
 				/>
 			</div>
-    
 
-			<div className='flex justify-evenly w-full'>
-				<Link href='/example-uploader'>Upload</Link>
-			</div>
+			<Button />
+
+      <UploadDnd/>
 		</main>
 	);
 }

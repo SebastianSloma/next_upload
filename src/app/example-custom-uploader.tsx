@@ -1,19 +1,30 @@
+"use client";
 // Note: `useUploadThing` is IMPORTED FROM YOUR CODEBASE using the `generateReactHelpers` function
 import type { FileWithPath } from "@uploadthing/react";
 import { useDropzone } from "@uploadthing/react/hooks";
 import { useCallback, useState } from 'react';
 import { generateClientDropzoneAccept } from "uploadthing/client";
  
+
 import { useUploadThing } from "../utils/uploadthing";
  
+
+
+
 export function MultiUploader() {
-  const [files, setFiles] = useState<File[]>([]);
+  const [files, setFiles] = useState<File[
+
+    
+  ]>([]);
   const onDrop = useCallback((acceptedFiles: FileWithPath[]) => {
     setFiles(acceptedFiles);
   }, []);
  
+
+
+  
   const { startUpload, permittedFileInfo } = useUploadThing(
-    "myUploadEndpoint",
+    "imageUploader",
     {
       onClientUploadComplete: () => {
         alert("uploaded successfully!");

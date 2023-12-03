@@ -1,21 +1,26 @@
-import { UploadDropzone } from "@uploadthing/react";
+"use client";
+
+// import { UploadDropzone } from '@uploadthing/react';
+import { UploadDropzone } from '@/utils/uploadthing';
+
  
-import { OurFileRouter } from "./api/uploadthing/core";
+
  
-export const OurUploadDropzone = () => (
-  <UploadDropzone<OurFileRouter>
-    endpoint="withoutMdwr"
-    onClientUploadComplete={(res) => {
-      // Do something with the response
-      console.log("Files: ", res);
-      alert("Upload Completed");
-    }}
-    onUploadError={(error: Error) => {
-      alert(`ERROR! ${error.message}`);
-    }}
-    onUploadBegin={(name) => {
-      // Do something once upload begins
-      console.log("Uploading: ", name);
-    }}
-  />
-);
+export default function UploadDnd() {
+  return (
+    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+      <UploadDropzone
+        endpoint="imageUploader"
+        onClientUploadComplete={(res: any) => {
+          // Do something with the response
+          console.log("Files: ", res);
+          alert("Upload Completed");
+        }}
+        onUploadError={(error: Error) => {
+          // Do something with the error.
+          alert(`ERROR! ${error.message}`);
+        }}
+      />
+    </main>
+  );
+}
