@@ -8,7 +8,7 @@ export default function UploadDnd() {
 			<UploadDropzone
 				endpoint='imageUploader'
 				onClientUploadComplete={(res: any) => {
-					// Do something with the response
+					// Do something with the responsee
 					console.log('Files: ', res);
 					alert('Upload Completed');
 				}}
