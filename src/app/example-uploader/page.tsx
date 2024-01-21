@@ -3,7 +3,7 @@
 import { UploadButton } from '../../utils/uploadthing';
 import { useState } from 'react';
 import Link from 'next/link';
-import { OurFileRouter } from '../api/uploadthing/core';
+
 
 
 export default function ButtonUpload() {
@@ -38,7 +38,7 @@ export default function ButtonUpload() {
 
 	return (
 		<main className='flex flex-col justify-between p-20'>
-			<UploadButton<OurFileRouter>
+			<UploadButton
 				endpoint='imageUploader'
 				onClientUploadComplete={res => {
 					if (res) {
