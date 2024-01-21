@@ -1,6 +1,8 @@
 ## About App
 This is an application that helps me upload photos, screenshots to cloud storage. Written in Next.js using TypeScript connected to the Uploadthing server. It has functions for selecting a photo from disk and drag and drop. Still under development.
 
+🔗 [Live Demo](https://next-upload-gamma.vercel.app/)
+🔗 [UploadThing Docs](https://docs.uploadthing.com/)
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
