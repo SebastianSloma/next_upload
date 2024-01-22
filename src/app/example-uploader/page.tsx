@@ -2,9 +2,8 @@
 
 import { UploadButton } from '../../utils/uploadthing';
 import { useState } from 'react';
+import { OurFileRouter } from '../api/uploadthing/core';
 import Link from 'next/link';
-
-
 
 export default function ButtonUpload() {
 	const [images, setImages] = useState<
@@ -38,7 +37,7 @@ export default function ButtonUpload() {
 
 	return (
 		<main className='flex flex-col justify-between p-20'>
-			<UploadButton
+			<UploadButton<OurFileRouter>
 				endpoint='imageUploader'
 				onClientUploadComplete={res => {
 					if (res) {
@@ -46,6 +45,7 @@ export default function ButtonUpload() {
 						const json = JSON.stringify(res);
 						console.log(json);
 					}
+
 					// Do something with the response
 					// console.log('Files: ', res);
 					// alert('Upload Completed');
@@ -55,7 +55,7 @@ export default function ButtonUpload() {
 					alert(`ERROR! ${error.message}`);
 				}}
 			/>
-      {imgList}
+			{imgList}
 		</main>
 	);
 }
