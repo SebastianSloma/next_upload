@@ -26,9 +26,9 @@ export default function ButtonUpload() {
 			<ul>
 				{images.map(image => (
 					<li key={image.fileUrl} className='mt-2'>
-						<Link href={image.fileUrl} target='_blank'>
+						{/* <Link href={image.fileUrl} target='_blank'> */}
 							{image.fileUrl}
-						</Link>
+						{/* </Link> */}
 					</li>
 				))}
 			</ul>
@@ -37,7 +37,7 @@ export default function ButtonUpload() {
 
 	return (
 		<main className='flex flex-col justify-between p-20'>
-			<UploadButton<OurFileRouter>
+			<UploadButton
 				endpoint='imageUploader'
 				onClientUploadComplete={res => {
 					if (res) {
@@ -55,6 +55,7 @@ export default function ButtonUpload() {
 					alert(`ERROR! ${error.message}`);
 				}}
 			/>
+			
 			{imgList}
 		</main>
 	);

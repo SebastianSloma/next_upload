@@ -24,16 +24,10 @@ export const ourFileRouter = {
 			console.log('Upload complete for userId:', metadata.userId);
 
 			console.log('file url', file.url);
-
-			// !!! Whatever is returned here is sent to the clientside `onClientUploadComplete` callback
-			return { uploadedBy: metadata.userId };
+	
 		}),
-	mediaPost: f({
-		image: { maxFileSize: '2MB', maxFileCount: 4 },
-		video: { maxFileSize: '256MB', maxFileCount: 1 },
-	})
-		.middleware(req => auth(req))
-		.onUploadComplete(data => console.log('file', data)),
+	
+	
 } satisfies FileRouter;
 
 export type OurFileRouter = typeof ourFileRouter;
